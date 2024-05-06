@@ -1,14 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
+//Import components
+import TweetList from "./components/TweetList"
+import CreateTweet  from './components/CreateTweet';
 
 function App() {
-
+  const [name, setName] = useState("Kemal")
+  const message = "Hello I am Kemal"
   return (
     <div>
-      <div className="text">
-         <h1>Hello</h1>
-
-         <button>Submit</button>
-      </div>
+       <CreateTweet/>
+       <TweetList setName={setName} name= {name} message= {message}/>
     </div>
   );
 }
